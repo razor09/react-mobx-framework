@@ -1,0 +1,10 @@
+import { http, HttpResponse } from 'msw'
+
+export const nameHandlers = [
+  /**
+   * Mock request handler
+   */
+  http.get('', () => {
+    return HttpResponse.json({})
+  }),
+]

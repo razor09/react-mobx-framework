@@ -1,0 +1,59 @@
+{
+  "scripts": {
+    "start": "webpack serve --config webpack/config.ts --progress --mode development",
+    "mocks": "npm start -- --name mocks",
+    "build": "webpack --config webpack/config.ts --progress --mode production",
+    "serve": "ts-node webpack/server.ts",
+    "generate": "ts-node tools/codegen/generate.ts",
+    "lint": "prettier --write **/*.{ts,tsx}",
+    "fetch": "rm -rf node_modules public/mockServiceWorker.js && npm ci",
+    "update:soft": "ncu -u && npm install",
+    "update:hard": "ncu -u && rm -rf node_modules package-lock.json && npm install"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npm run lint && git add --all"
+  },
+  "msw": {
+    "workerDirectory": "public"
+  },
+  "dependencies": {
+    "mobx": "6.13.5",
+    "mobx-react-lite": "4.0.7",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-router-dom": "6.27.0",
+    "react-transition-group": "4.4.5"
+  },
+  "devDependencies": {
+    "@types/http-server": "0.12.4",
+    "@types/node": "22.8.6",
+    "@types/react": "18.3.12",
+    "@types/react-dom": "18.3.1",
+    "@types/react-transition-group": "4.4.11",
+    "css-loader": "7.1.2",
+    "css-minimizer-webpack-plugin": "7.0.0",
+    "html-webpack-plugin": "5.6.3",
+    "http-server": "14.1.1",
+    "mini-css-extract-plugin": "2.9.2",
+    "msw": "2.6.0",
+    "npm-check-updates": "17.1.9",
+    "prettier": "3.3.3",
+    "sass": "1.80.5",
+    "sass-loader": "16.0.3",
+    "simple-git-hooks": "2.11.1",
+    "style-loader": "4.0.0",
+    "terser-webpack-plugin": "5.3.10",
+    "ts-loader": "9.5.1",
+    "ts-node": "10.9.2",
+    "typescript": "5.6.3",
+    "webpack": "5.96.0",
+    "webpack-cli": "5.1.4",
+    "webpack-dev-server": "5.1.0"
+  }
+}
