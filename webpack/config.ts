@@ -6,9 +6,9 @@ import TerserWebpackPlugin from 'terser-webpack-plugin'
 import { Configuration, DefinePlugin } from 'webpack'
 import 'webpack-dev-server'
 import { getBaseUrl, getIsDevelopment, getIsMocksOn, getIsProduction, getProxy, host, port } from './settings'
-import { Args } from './typings'
+import { WebpackArgs } from './typings'
 
-export default (_: object, args: Args): Configuration => {
+export default (_: object, args: WebpackArgs): Configuration => {
   const isDevelopment = getIsDevelopment(args)
   const isProduction = getIsProduction(args)
   const isMocksOn = getIsMocksOn(args)
