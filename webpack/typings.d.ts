@@ -1,8 +1,8 @@
 export type WebpackArgsMode = 'development' | 'production'
 
-export type WebpackArgsType = 'mocks'
+export type WebpackArgsName = 'mocks'
 
 export interface WebpackArgs {
   mode: WebpackArgsMode
-  name: WebpackArgsType
+  name: WebpackArgsName
 }
