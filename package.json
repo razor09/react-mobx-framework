@@ -17,7 +17,7 @@
     "trailingComma": "all"
   },
   "simple-git-hooks": {
-    "pre-commit": "npm run lint && git add --all"
+    "pre-commit": "npm run build && npm run lint && git add --all"
   },
   "msw": {
     "workerDirectory": "public"
