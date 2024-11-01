@@ -5,7 +5,7 @@ import style from './Entry.scss'
 export const Entry = observer(() => {
   return (
     <BrowserRouter>
-      <div className={style.container}>React Mobx Template</div>
+      <div className={style.container}>React Mobx Framework</div>
     </BrowserRouter>
   )
 })
