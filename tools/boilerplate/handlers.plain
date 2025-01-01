@@ -1,0 +1,44 @@
+import { DefaultBodyType, delay, http, HttpHandler, HttpResponse, PathParams } from 'msw'
+import { Resource } from '../../../libs/api/typings'
+import { durationOrMode, error, response } from '../../utils/constants'
+import { parsePathParams, parseQueryParams } from '../../utils/parsers'
+import { MaybeError } from '../../utils/typings'
+import { __arg__Mocks } from './mocks'
+
+export const __arg__Handlers: HttpHandler[] = [
+  http.get<PathParams, DefaultBodyType, MaybeError<object[]>>(Resource.Base, async (info) => {
+    const { id } = parseQueryParams(info.request.url)
+    const items = __arg__Mocks.all(id)
+    await delay(durationOrMode)
+    return HttpResponse.json(items)
+  }),
+  http.get<PathParams, DefaultBodyType, MaybeError<object>>(Resource.Base, async (info) => {
+    const { id } = parsePathParams(info.params)
+    const object = __arg__Mocks.one(id)
+    await delay(durationOrMode)
+    return HttpResponse.json(object)
+  }),
+  http.post<PathParams, object, MaybeError<object>>(Resource.Base, async (info) => {
+    const body = await info.request.json()
+    const object = __arg__Mocks.create(body)
+    await delay(durationOrMode)
+    return HttpResponse.json(object)
+  }),
+  http.put<PathParams, object, MaybeError<object>>(Resource.Base, async (info) => {
+    const { id } = parsePathParams(info.params)
+    const body = await info.request.json()
+    const object = __arg__Mocks.update(id, body)
+    await delay(durationOrMode)
+    return HttpResponse.json(object)
+  }),
+  http.delete<PathParams, DefaultBodyType, MaybeError<object>>(Resource.Base, async (info) => {
+    const { id } = parsePathParams(info.params)
+    const object = __arg__Mocks.delete(id)
+    await delay(durationOrMode)
+    return HttpResponse.json(object)
+  }),
+  http.get<PathParams, DefaultBodyType, MaybeError<object>>(Resource.Base, async () => {
+    await delay(durationOrMode)
+    return HttpResponse.json(error, response)
+  }),
+]
