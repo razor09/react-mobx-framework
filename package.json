@@ -5,7 +5,7 @@
     "build": "webpack --config webpack/config.ts --progress --mode production",
     "preview": "ts-node webpack/preview.ts",
     "generate": "ts-node tools/codegen/generate.ts",
-    "lint": "prettier --write **/*.{ts,tsx,scss,json}",
+    "lint": "prettier --write **/*.{ts,tsx,html,scss,json}",
     "fetch": "rm -rf node_modules public/mockServiceWorker.js && npm ci",
     "update": "ncu -u && rm -rf node_modules package-lock.json && npm install"
   },
