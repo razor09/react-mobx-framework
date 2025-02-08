@@ -32,7 +32,7 @@
   "devDependencies": {
     "@faker-js/faker": "9.4.0",
     "@types/http-server": "0.12.4",
-    "@types/node": "22.13.0",
+    "@types/node": "22.13.1",
     "@types/react": "19.0.8",
     "@types/react-dom": "19.0.3",
     "@types/react-transition-group": "4.4.12",
@@ -44,7 +44,7 @@
     "msw": "2.7.0",
     "npm-check-updates": "17.1.14",
     "prettier": "3.4.2",
-    "sass": "1.83.4",
+    "sass": "1.84.0",
     "sass-loader": "16.0.4",
     "simple-git-hooks": "2.11.1",
     "style-loader": "4.0.0",
