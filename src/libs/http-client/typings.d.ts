@@ -10,9 +10,11 @@ export type LoadFileConfig = Pick<LoadStreamConfig, 'endpoint' | 'queryParams'>
 
 export type QueryParams = PlainObject<StringOrNumberOrBoolean>
 
+export type ReadHeadersFn = () => HeadersInit
+
 export interface HttpBaseConfig {
   baseUrl: string
-  headers: HeadersInit
+  headers: ReadHeadersFn
   credentials: RequestCredentials
 }
 

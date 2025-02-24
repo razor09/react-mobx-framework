@@ -1,11 +1,20 @@
 import { invalidRequestParams } from '../utils/constants'
 import { Helpers } from '../utils/helpers'
 import { Optional, PlainObjectOrArray, StringOrNumber } from '../utils/typings'
-import { ErrorCallback, HttpBaseConfig, HttpCallConfig, OnReadStream, QueryParams, RequestMethod, Stream } from './typings'
+import {
+  ErrorCallback,
+  HttpBaseConfig,
+  HttpCallConfig,
+  OnReadStream,
+  QueryParams,
+  ReadHeadersFn,
+  RequestMethod,
+  Stream,
+} from './typings'
 
 export class HttpClient {
   private readonly baseUrl: Optional<string>
-  private readonly headers: Optional<HeadersInit>
+  private readonly headers: Optional<ReadHeadersFn>
   private readonly credentials: Optional<RequestCredentials>
 
   private errorCallback: Optional<ErrorCallback>
@@ -52,7 +61,7 @@ export class HttpClient {
   private async fetch(url: string, method: RequestMethod, body?: PlainObjectOrArray): Promise<Response> {
     return await fetch(url, {
       method,
-      headers: this.headers,
+      headers: this.headers && this.headers(),
       credentials: this.credentials,
       body: JSON.stringify(body),
     })
