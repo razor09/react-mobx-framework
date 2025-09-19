@@ -32,7 +32,7 @@
   "devDependencies": {
     "@faker-js/faker": "10.0.0",
     "@types/http-server": "0.12.4",
-    "@types/node": "24.5.1",
+    "@types/node": "24.5.2",
     "@types/react": "19.1.13",
     "@types/react-dom": "19.1.9",
     "@types/react-transition-group": "4.4.12",
@@ -42,7 +42,7 @@
     "http-server": "14.1.1",
     "mini-css-extract-plugin": "2.9.4",
     "msw": "2.11.2",
-    "npm-check-updates": "18.1.1",
+    "npm-check-updates": "18.2.1",
     "prettier": "3.6.2",
     "sass": "1.92.1",
     "sass-loader": "16.0.5",
