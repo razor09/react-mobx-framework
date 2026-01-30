@@ -1,0 +1,9 @@
+import { observer } from 'mobx-react-lite'
+import style from './style.scss'
+import { __arg__Props } from './typings'
+
+export const __arg__ = observer<__arg__Props>(() => {
+  return (
+    <div className={style.container}>__arg__</div>
+  )
+})
