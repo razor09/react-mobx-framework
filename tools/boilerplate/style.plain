@@ -1,0 +1,9 @@
+@use '../../../theme/colors';
+@use '../../../theme/fonts';
+@use '../../../theme/layouts';
+@use '../../../theme/mixins';
+@use '../../../theme/options';
+
+.container {
+  background: inherit;
+}

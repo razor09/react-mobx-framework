@@ -1,0 +1,51 @@
+import { faker } from '@faker-js/faker'
+import { Count } from '../../helpers/typings'
+
+export namespace __arg__Mocks {
+  const map = new Map<number, object>()
+  const items = Array.from<typeof map>({ length: Count.Minimal })
+
+  const initialize = (id: number): object => {
+    return { id }
+  }
+
+  const collection = items.reduce((collection, _, index) => {
+    const id = index + 1
+    const object = initialize(id)
+    return collection.set(id, object)
+  }, map)
+
+  export const random = (): object => {
+    const id = faker.number.int({
+      min: Count.Minimal,
+      max: collection.size,
+    })
+    return one(id)
+  }
+
+  export const all = (_: number): object[] => {
+    const iterator = collection.values()
+    return Array.from(iterator)
+  }
+
+  export const one = (id: number): object => {
+    return collection.get(id) ?? initialize(0)
+  }
+
+  export const update = (id: number, body: object): object => {
+    const object = { id, ...body }
+    collection.set(id, object)
+    return object
+  }
+
+  export const create = (body: object): object => {
+    const id = collection.size + 1
+    return update(id, body)
+  }
+
+  export const remove = (id: number): object => {
+    const object = one(id)
+    collection.delete(id)
+    return object
+  }
+}

@@ -1,0 +1,40 @@
+import { DefaultBodyType, delay, http, HttpHandler, HttpResponse, PathParams } from 'msw'
+import { Resource } from '../../../libs/api/typings'
+import { durationOrMode, error, fail } from '../../helpers/constants'
+import { Failable } from '../../helpers/typings'
+import { UrlParser } from '../../helpers/url-parser'
+import { __arg__Mocks } from './mocks'
+
+export const __arg__Handlers: HttpHandler[] = [
+  http.get<PathParams, DefaultBodyType, Failable<object[]>>(Resource.Base, async (info) => {
+    const { id } = UrlParser.parseQueryParams(info.request.url)
+    const items = __arg__Mocks.all(id)
+    await delay(durationOrMode)
+    return true ? HttpResponse.json(items) : HttpResponse.json(error, fail)
+  }),
+  http.get<PathParams, DefaultBodyType, Failable<object>>(Resource.Base, async (info) => {
+    const { id } = UrlParser.parsePathParams(info.params)
+    const object = __arg__Mocks.one(id)
+    await delay(durationOrMode)
+    return true ? HttpResponse.json(object) : HttpResponse.json(error, fail)
+  }),
+  http.post<PathParams, object, Failable<object>>(Resource.Base, async (info) => {
+    const body = await info.request.json()
+    const object = __arg__Mocks.create(body)
+    await delay(durationOrMode)
+    return true ? HttpResponse.json(object) : HttpResponse.json(error, fail)
+  }),
+  http.put<PathParams, object, Failable<object>>(Resource.Base, async (info) => {
+    const { id } = UrlParser.parsePathParams(info.params)
+    const body = await info.request.json()
+    const object = __arg__Mocks.update(id, body)
+    await delay(durationOrMode)
+    return true ? HttpResponse.json(object) : HttpResponse.json(error, fail)
+  }),
+  http.delete<PathParams, DefaultBodyType, Failable<object>>(Resource.Base, async (info) => {
+    const { id } = UrlParser.parsePathParams(info.params)
+    const object = __arg__Mocks.remove(id)
+    await delay(durationOrMode)
+    return true ? HttpResponse.json(object) : HttpResponse.json(error, fail)
+  }),
+]
