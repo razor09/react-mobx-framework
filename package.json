@@ -42,7 +42,7 @@
     "http-server": "14.1.1",
     "mini-css-extract-plugin": "2.10.0",
     "msw": "2.12.10",
-    "npm-check-updates": "19.6.2",
+    "npm-check-updates": "19.6.3",
     "prettier": "3.8.1",
     "sass": "1.97.3",
     "sass-loader": "16.0.7",
