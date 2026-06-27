@@ -1,0 +1,54 @@
+{
+  "scripts": {
+    "start": "vite",
+    "mocks": "vite --mode mocks",
+    "build": "vite build",
+    "pitch": "vite build --mode mocks",
+    "preview": "vite preview",
+    "generate": "tsx tools/generate",
+    "lint": "prettier --write .",
+    "fetch": "rm -rf node_modules && npm ci",
+    "update": "ncu -u && rm -rf node_modules package-lock.json && npm i"
+  },
+  "msw": {
+    "workerDirectory": "."
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npm run build && npm run lint && git add --all"
+  },
+  "prettier": {
+    "printWidth": 150,
+    "semi": false,
+    "singleQuote": true,
+    "singleAttributePerLine": true
+  },
+  "config": {
+    "host": "localhost",
+    "port": 4200,
+    "proxy": {
+      "origin": "",
+      "baseUrl": ""
+    }
+  },
+  "dependencies": {
+    "mobx": "6.16.1",
+    "mobx-react-lite": "4.1.1",
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
+    "react-router-dom": "7.18.0"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "10.5.0",
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.3",
+    "msw": "2.14.6",
+    "npm-check-updates": "22.2.7",
+    "prettier": "3.8.5",
+    "sass": "1.101.0",
+    "simple-git-hooks": "2.13.1",
+    "tsx": "4.22.4",
+    "typescript": "6.0.3",
+    "vite": "8.1.0"
+  }
+}
