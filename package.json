@@ -29,7 +29,7 @@
     }
   },
   "dependencies": {
-    "mobx": "7.0.4",
+    "mobx": "7.0.5",
     "mobx-react-lite": "5.1.0",
     "react": "19.3.0",
     "react-dom": "19.3.0",
