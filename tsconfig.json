@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "module": "esnext",
+    "target": "esnext",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
+  }
+}
