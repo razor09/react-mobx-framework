@@ -8,8 +8,8 @@
     "preview": "vite preview",
     "generate": "tsx tools/generate",
     "lint": "prettier --write .",
-    "fetch": "rm -rf node_modules && npm clean-install --ignore-scripts",
-    "update": "ncu --upgrade && rm -rf node_modules package-lock.json && npm install --ignore-scripts"
+    "fetch": "rm -rf node_modules && npm clean-install",
+    "update": "ncu --upgrade && rm -rf node_modules package-lock.json && npm install"
   },
   "simple-git-hooks": {
     "pre-commit": "npm run build && npm run lint && git add --all"
