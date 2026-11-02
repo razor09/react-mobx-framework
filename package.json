@@ -36,7 +36,7 @@
     "@faker-js/faker": "10.6.0",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
-    "@vitejs/plugin-react": "6.2.0",
+    "@vitejs/plugin-react": "6.2.1",
     "msw": "3.0.3",
     "npm-check-updates": "23.1.1",
     "prettier": "3.9.10",
