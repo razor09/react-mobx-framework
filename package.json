@@ -1,0 +1,48 @@
+{
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "mocks": "vite --mode mocks",
+    "build": "vite build",
+    "pitch": "vite build --mode mocks",
+    "preview": "vite preview",
+    "generate": "tsx tools/generate",
+    "format": "prettier --write .",
+    "fetch": "rm -rf node_modules && npm clean-install",
+    "update": "ncu --upgrade && rm -rf node_modules package-lock.json && npm install"
+  },
+  "prettier": {
+    "printWidth": 150,
+    "semi": false,
+    "singleQuote": true,
+    "singleAttributePerLine": true
+  },
+  "config": {
+    "host": "localhost",
+    "port": 4200,
+    "proxy": {
+      "origin": "",
+      "prefix": ""
+    }
+  },
+  "dependencies": {
+    "mobx": "7.1.6",
+    "mobx-react-lite": "5.1.2",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "react-router-dom": "7.18.5"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "10.6.0",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.3.0",
+    "msw": "3.0.5",
+    "npm-check-updates": "23.1.1",
+    "prettier": "3.10.1",
+    "sass": "1.108.2",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2",
+    "vite": "8.3.8"
+  }
+}
