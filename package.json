@@ -37,7 +37,7 @@
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
     "@vitejs/plugin-react": "6.3.0",
-    "msw": "3.0.5",
+    "msw": "3.0.6",
     "npm-check-updates": "23.1.1",
     "prettier": "3.10.1",
     "sass": "1.108.2",
