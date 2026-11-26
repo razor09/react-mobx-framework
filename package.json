@@ -34,10 +34,10 @@
   },
   "devDependencies": {
     "@faker-js/faker": "10.6.0",
-    "@types/react": "19.3.2",
+    "@types/react": "19.3.3",
     "@types/react-dom": "19.3.0",
     "@vitejs/plugin-react": "6.3.0",
-    "msw": "3.0.7",
+    "msw": "3.0.8",
     "npm-check-updates": "23.1.1",
     "prettier": "3.10.1",
     "sass": "1.108.2",
