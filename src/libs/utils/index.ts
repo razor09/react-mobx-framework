@@ -119,9 +119,7 @@ export namespace Utils {
     let index = 0
     return path
       .split('/')
-      .map((segment) => {
-        return segment.startsWith(':') && index < params.length ? params.at(index++)?.toString() : segment
-      })
+      .map((segment) => (segment.startsWith(':') && index < params.length ? params.at(index++) : segment))
       .join('/')
   }
 
